@@ -1,0 +1,65 @@
+#include <stdio.h>
+int que[10],size=10,front=0,rear=-1,val,n;
+int main()
+{
+    //printf("1.enqueue\n2.dequeue\n3.display\n");
+    while(1)
+    {
+        printf("1.enqueue\n2.dequeue\n3.display\n4.Exit");
+        printf("Enter your choice \n");
+        scanf("%d",&n);
+    
+    
+        switch(n)
+        {
+            case 1:
+            enqueue();
+            break;
+            case 2:
+            dequeue();
+            break;
+            case 3:
+            display();
+            break;
+            case 4:
+            printf("Exiting....");
+            exit(0);
+            
+        }
+    }
+}
+enqueue()
+{
+    if(rear==size-1)
+    {
+        printf("Queue is full\n");    
+    }
+    else
+    {  rear++;
+       printf("Enter a value to Add ");
+       scanf("%d ",&val);
+       que[rear]=val;
+    }
+}
+dequeue()
+{
+    if(rear==-1)
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+    if(front>rear)
+    {
+        printf("No more elements to delete");
+        return;
+    }
+    printf("Deleted element is %d",que[front]);
+    front++;
+}
+display()
+{
+    for(int i=front;i<=rear;i++)
+    {
+        printf(" %d ",que[i]);
+    }
+}

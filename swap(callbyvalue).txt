@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{   
+    int a=10,b=20;
+    swap(a,b);
+     return 0;
+}
+int swap(int a,int b)
+{
+   int temp=0;
+    printf("The value of a=%d and b=%d before swapping\n",a,b);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("The value of a=%d and b=%d after swapping\n",a,b);
+    return 0;
+}
+

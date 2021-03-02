@@ -1,0 +1,102 @@
+#include <stdio.h>
+int stack[10],stack1[10],top=-1,size=10,pos=0,i,top1=-1;
+struct node
+{
+    int data;
+    struct node *link;
+};
+ struct node *head=NULL;
+ struct node *First;
+ 
+int main()
+{
+    insertbeg(15);
+    insertbeg(14);
+    insertbeg(18);
+    insertbeg(20);
+    insertbeg(21);  
+    insertbeg(22);
+    insertbeg(23);
+    insertbeg(24);
+    insertbeg(25);
+    print1();
+    push();
+    print();
+}
+void insertbeg(int data)
+{  
+    First=(struct node *)malloc(sizeof(struct node));
+    First->data=data;
+    First->link=head;
+    head=First;
+}
+void push()
+{
+    struct node *tmp;
+    tmp=head;
+    while(tmp!=NULL)
+    {
+        pos++;
+        if(pos%2!=0)
+        {    
+            top++;
+            stack[top]=tmp->data;
+        }
+        else
+        {
+
+            top1++;
+            stack1[top1]=tmp->data;
+        }
+        tmp=tmp->link;
+    }
+}
+void print()
+{
+   printf("Odd copied from list to stack are\n");
+   if(top==-1)
+   {
+       printf("stack is empty");
+   }
+   else
+   {
+       for(i=top;i>=0;i--)
+       {
+           printf("%d \n",stack[i]);
+       }
+   }
+   printf("Even copied from list to stack are\n");
+   if(top1==-1)
+   {
+       printf("stack is empty");
+   }
+   else
+   {
+       for(i=top1;i>=0;i--)
+       {
+           printf("%d \n",stack1[i]);
+       }
+   }
+  
+   
+}
+void print1()
+{
+    printf("Elements in the list\n");
+   if(head==NULL)
+   {
+       printf("list is empty");
+   }
+   else
+   {
+       struct node *tmp1;
+       tmp1=head;
+       while(tmp1!=NULL)
+       {
+           
+           printf("%d \n",tmp1->data);
+           tmp1=tmp1->link;
+       }
+   }
+}
+

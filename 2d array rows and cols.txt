@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(){
+   /* 2D array declaration*/
+   int x,y;
+   printf("Enter number of rows:\n");
+   scanf("%d",&x);
+   printf("Enter number of colums:\n");
+   scanf("%d",&y);
+   int disp[x][y];
+   /*Counter variables for the loop*/
+   int i, j;
+   for(i=0; i<x; i++) {
+      for(j=0;j<y;j++) {
+         printf("Enter value for disp[%d][%d]:", i, j);
+         scanf("%d", &disp[i][j]);
+      }
+   }
+   //Displaying array elements
+   printf("Two Dimensional array elements:\n");
+   for(i=0; i<x; i++) {
+      for(j=0;j<y;j++) {
+         printf("%d ", disp[i][j]);
+         if(j==x){
+            printf("\n");
+         }
+      }
+   }
+   return 0;
+}
+ 

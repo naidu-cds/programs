@@ -1,0 +1,199 @@
+----------------------Storage class-----------Auto------------------
+
+#include <stdio.h>
+void f();
+int main()
+{
+ f();
+ f2();
+printf ("welcome");
+return 0;
+}
+void f()
+{
+printf ("Hai");
+f2();
+}
+void f2()
+{
+printf ("Foo");
+}
+
+----------------------------Static-----------------------------
+#include <stdio.h>
+void f();
+int main()
+{
+ f();
+ f();
+ f();
+return 0;
+}
+void f()
+{
+ static int a=10; // this line gets executed only once
+ a=a+1;
+ 
+ printf(" a is %d ",a);
+}
+---------------------Operators--------------------
+#include <stdio.h>
+int main()
+{
+
+ int i=10;
+ printf("%d",i++);
+ printf("%d",i);
+
+return 0;
+}
+----------------------------increment-------------
+#include <stdio.h>
+int main()
+{
+
+ int i=10;
+
+ int j;
+
+ ++i;
+
+ // i++;
+
+ printf("%d",i);
+
+return 0;
+}
+------------------------------increment----------
+#include <stdio.h>
+int main()
+{
+
+ int i=10;
+ int j=0;
+ j = i++; // = and ++ (j=i) i++ ,, j = (i++)
+ printf("j is %d\n ",j);
+ /* code */
+
+
+return 0;
+}
+-------------------shift operator------------------
+#include <stdio.h>
+int main()
+{
+ int a = 4;
+ a = a >> 1;
+ printf("a is %d ",a);
+return 0;
+}
+-----------------------
+#include <stdio.h>
+int main()
+{
+ int a = 1;
+ int b = 4;
+ if(a>b) printf("a is greager ");
+ else
+ printf("b is greater ");
+return 0;
+}
+--------------------using ternary
+#include <stdio.h>
+int main()
+{
+ int a = 1;
+ int b = 4;
+ a>b ? printf("a is greater ") : printf("b is greager ");
+
+return 0;
+}
+------------------------------------------switch case ----
+int main()
+{
+ int a = 0;
+ printf("Enter ch");
+ scanf("%d",&a);
+ switch(a)
+ {
+ case 1: printf("ONE"); break;
+ case 2: printf("TWO"); break;
+ case 3: printf("THREE"); break;
+ default: printf("NONE"); break;
+ }
+
+return 0;
+}
+--------------------------break------------------
+#include <stdio.h>
+int main()
+{
+ for (int i = 0; i < 10; i++) {
+ if(i==4) break;
+ printf(" %d ",i);
+ }
+
+return 0;
+}
+---------------------------------continue-----------
+#include <stdio.h>
+int main()
+{
+ for (int i = 0; i < 10; i++) {
+ if(i==4) continue;
+ printf(" %d ",i);
+ }
+
+return 0;
+}
+------------------------------Biggest no------------
+#include <stdio.h>
+// read 10 nos and print
+int main()
+{
+ int no=0; int big=0;
+ printf("Enter 10 nos");
+ for (int i = 0; i < 10; i++) {
+ scanf("%d",&no);
+ if(no>big) big = no;
+ }
+ printf("Biggest no is %d",big);
+
+return 0;
+}
+--------------------------------- while -----------
+#include <stdio.h>
+// read 10 nos and print
+int main()
+{
+ int no=0; int big=0; int i=0;
+ printf("Enter 10 nos");
+
+ while(i<10){
+ scanf("%d",&no);
+ if(no>big) big = no;
+ i++;
+ }
+ printf("Biggest no is %d",big);
+
+return 0;
+}
+---------------------------Do while --------------------------
+#include <stdio.h>
+// read 10 nos and print
+int main()
+{
+ int no=0; int big=0; int i=0;
+ printf("Enter 10 nos");
+
+ do{
+ scanf("%d",&no);
+ if(no>big) big = no;
+ i++;
+ } while(i<10);
+
+ printf("Biggest no is %d",big);
+
+return 0;
+}
+

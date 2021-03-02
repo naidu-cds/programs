@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+    staticdemo();
+    return 0;
+}
+void staticdemo()
+{
+    int a=4;
+    for(int i=0;i<4;i++);
+    
+    printf("%d",a);
+}
